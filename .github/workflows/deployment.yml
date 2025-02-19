@@ -50,3 +50,6 @@ jobs:
 
     - name: dbt run
       run: ./gh_actions/bin/python dbt run --profiles-dir ./.dbt
+
+    - name: duckdb queries
+      run: ./gh_actions/bin/python queries.py
