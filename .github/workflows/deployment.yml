@@ -17,6 +17,9 @@ jobs:
     - name: checkout code
       uses: actions/checkout@v1
 
+    - name: list contents
+      run: ls
+
     - name: Install Docker using Docker's official script
       run: |
           curl -fsSL https://get.docker.com -o get-docker.sh

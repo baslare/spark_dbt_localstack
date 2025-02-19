@@ -2,7 +2,7 @@
 
 ### Explanation
 
-Hey! This repository demonstrates an ETL example.
+Hey! This repository demonstrates an ELT example for air boltic!.
 
 I've chosen the tools to reflect the functionality defined in the task:
 
@@ -17,4 +17,6 @@ I've chosen the tools to reflect the functionality defined in the task:
   - duckdb python script to demonstrate a few queries, on the DWH.
 - **GitHub to keep our scripts organised**:
   - well, this repo and GH Actions to demonstrate that the example works.
+
+All of these are organized in a docker-compose.yml file. You can have a look at the runs in GitHub Actions.
 
