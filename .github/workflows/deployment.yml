@@ -47,7 +47,7 @@ jobs:
       run: ./gh_actions/bin/python extract.py
 
     - name: dbt create external tables in spark thrift server
-      run: ./gh_actions/bin/python  dbt run-operation create_external_tables  --profiles-dir ./.dbt
+      run: ./gh_actions/bin/python  dbt run-operation create_external_tables  --profiles-dir .dbt
 
     - name: dbt run
       run: ./gh_actions/bin/python dbt run --profiles-dir .dbt
