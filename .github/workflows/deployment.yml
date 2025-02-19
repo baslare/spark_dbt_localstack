@@ -1,0 +1,33 @@
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  docker:
+    timeout-minutes: 15
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: checkout code
+      uses: actions/checkout@v1
+
+    - name: start docker compose
+      uses: docker-compose up -d --build
+
+    - name: install python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12.4'
+
+    - name: install python dependencies
+      run: sudo pip3 install -r requirements.txt
+
+    - name: seed s3 data
+      run: python3 init_data.py
+
+    - name: extract data using pyspark
+      run: python3 extract.py

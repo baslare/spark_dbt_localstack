@@ -1,6 +1,5 @@
-pyspark
-psycopg
-dbt-core
-dbt-spark[PyHive]
-duckdb
-boto3
+pyspark==3.5.4
+dbt-core==1.9.2
+dbt-spark[PyHive]==1.9.1
+duckdb==1.2.0
+boto3==1.36.21
