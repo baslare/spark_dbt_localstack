@@ -17,8 +17,6 @@ if __name__ == "__main__":
         .getOrCreate()
 
     json_file = spark.read.option("multiline", "true").json("s3a://air-boltic/aeroplane_data/aeroplane_model.json")
-    json_file.show()
-    json_file.printSchema()
 
     df_list = []
     for manufacturer in json_file.schema.names:
@@ -30,7 +28,6 @@ if __name__ == "__main__":
             df_list.append(df_local)
 
     df_aeroplane_details = reduce(lambda x, y: x.union(y), df_list)
-    df_aeroplane_details.show()
 
     df_aeroplane = (spark.read
                     .option("inferSchema", "true")
