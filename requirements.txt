@@ -1,0 +1,6 @@
+pyspark
+psycopg
+dbt-core
+dbt-spark[PyHive]
+duckdb
+boto3

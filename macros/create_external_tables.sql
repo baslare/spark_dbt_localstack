@@ -1,4 +1,4 @@
-{% macro create_trips_external_tables() %}
+{% macro create_external_tables() %}
     {% set create_db %}
     CREATE DATABASE IF NOT EXISTS boltic;
     {%  endset %}
@@ -10,7 +10,7 @@
             trip_id int,
             origin_city char(30),
             destination_city char(30),
-            airplane_id int,
+            aeroplane_id int,
             trip_start_timestamp TIMESTAMP,
             trip_end_timestamp TIMESTAMP
 
@@ -42,7 +42,7 @@
             customer_group_id int,
             customer_group_type char(50),
             customer_group_name char(50),
-            customer_group_name char(50)
+            registry_number char(50)
 
     )
     USING PARQUET
@@ -84,10 +84,10 @@
 
     {% do log("Creating external tables in Spark...", info=True) %}
     {% do run_query(create_db) %}
-    {% do run_query(create_table_trip_normal) %}
-    {% do run_query(create_table_order_normal) %}
+    {% do run_query(create_table_aeroplane_normal) %}
     {% do run_query(create_table_customer_group_normal) %}
     {% do run_query(create_table_customer_normal) %}
-    {% do run_query(create_table_aeroplane_normal) %}
+    {% do run_query(create_table_trip_normal) %}
+    {% do run_query(create_table_order_normal) %}
     {% do log("Finished creating external tables in Spark.", info=True) %}
 {% endmacro %}

@@ -1,0 +1,21 @@
+bolt:
+  target: local
+  outputs:
+    local:
+      type: spark
+      method: thrift
+      schema: boltic
+      host: localhost
+      port: 10000             # default 10001
+      user: dbt
+      use_ssl: false  # value of hive.server2.use.SSL, default false
+      server_side_parameters:
+        "spark.driver.memory": "4g"
+    postgres:
+      type: postgres
+      host: localhost
+      user: boltic
+      password: boltic
+      dbname: boltic
+      schema: public
+      port: 5433
