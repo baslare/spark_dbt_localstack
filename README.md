@@ -5,6 +5,7 @@ Hey! This repository demonstrates an ELT example for air boltic!.
 
 I've chosen the tools to reflect the functionality defined in the task:
 
+
 - **S3 for data storage**
   - Localstack container with s3 enabled, very basic hive partitioning.
 - **Databricks for compute and data exploration**:
