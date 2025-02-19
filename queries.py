@@ -21,7 +21,7 @@ if __name__ == "__main__":
     duckdb.sql(f"CREATE TABLE fact_orders AS SELECT * FROM read_parquet('s3://air-boltic-data-warehouse/fact_orders/*.parquet')")
     duckdb.sql(f"CREATE TABLE fact_trips AS SELECT * FROM read_parquet('s3://air-boltic-data-warehouse/fact_trips/*.parquet')")
 
-    # Orders and revenue per customer
+    print("#### Orders and revenue per customer ####")
     result = duckdb.query("SELECT "
                           " dc.customer_id, "
                           " COUNT(fo.customer_id) as number_of_orders, "
@@ -31,7 +31,7 @@ if __name__ == "__main__":
                           "GROUP BY dc.customer_id")
 
     result.show()
-    # Trips and revenue per aeroplane model
+    print("#### Trips and revenue per aeroplane model ####")
     result = duckdb.query("SELECT "
                           " ft.aeroplane_id,"
                           " COUNT(fo.trip_id) as number_of_trips, "
@@ -43,7 +43,7 @@ if __name__ == "__main__":
     result.show()
 
 
-    # Customer Activity
+    print("#### Customer Activity ####")
 
     result = duckdb.query("SELECT fo.customer_id, "
                           "max(ft.trip_end_timestamp) as last_flight,"
