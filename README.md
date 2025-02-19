@@ -1,8 +1,8 @@
 ## Air Boltic Data Modelling
 
 
-Hey! This repository demonstrates an ELT example for air boltic!.
-
+Hey! This repository demonstrates an ELT example for air boltic!. For a full run of the model have a look at this [GH Actions](https://github.com/baslare/spark_dbt_localstack/actions/runs/13422015338/job/37496630154
+) run! 
 I've chosen the tools to reflect the functionality defined in the task:
 
 
