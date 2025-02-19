@@ -21,6 +21,11 @@ I've chosen the tools to reflect the functionality defined in the task:
 All of these are organized in a docker-compose.yml file. You can have a look at the runs in GitHub Actions. 
 The commands (e.g. queries) have their output written, where applicable.
 
-The modelling approach I had is something similar to a star schema in a data warehouse. While this is obviously a very simplified example, if scaled the main idea wouldn't change much:
+The modelling approach I had is something similar to a star schema in a data warehouse. While this is obviously a very simplified example, the main ideas would stay the same:
+
+- The goal is to provide a DWH solution that allows for an efficiently queryable self-service storage.
+- This calls for an OLAP approach, but the data we receive seems normalized. For the sake of simplicity,
+I just added the files provided in the task in the localstack bucket (_air-boltic_)
+- pyspark extracts and 
 
 
