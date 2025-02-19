@@ -36,6 +36,9 @@ jobs:
       with:
         python-version: '3.12.4'
 
+    - name: build virtual env
+      uses: python -m venv gh_actions && source ./gh_actions/bin/activate
+
     - name: install python dependencies
       run: sudo pip3 install -r requirements.txt
 
