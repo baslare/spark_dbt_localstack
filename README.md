@@ -18,5 +18,9 @@ I've chosen the tools to reflect the functionality defined in the task:
 - **GitHub to keep our scripts organised**:
   - well, this repo and GH Actions to demonstrate that the example works.
 
-All of these are organized in a docker-compose.yml file. You can have a look at the runs in GitHub Actions.
+All of these are organized in a docker-compose.yml file. You can have a look at the runs in GitHub Actions. 
+The commands (e.g. queries) have their output written, where applicable.
+
+The modelling approach I had is something similar to a star schema in a data warehouse. While this is obviously a very simplified example, if scaled the main idea wouldn't change much:
+
 
