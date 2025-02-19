@@ -37,13 +37,10 @@ jobs:
         python-version: '3.12.4'
 
     - name: build virtual env
-      run: python -m venv gh_actions && source ./gh_actions/bin/activate
-
-    - name: install python dependencies
-      run: sudo pip3 install -r requirements.txt
+      run: python -m venv gh_actions && source ./gh_actions/bin/activate && pip3 install -r requirements.txt
 
     - name: seed s3 data
-      run: python3 init_data.py
+      run: ./gh_actions/bin/python init_data.py
 
     - name: extract data using pyspark
-      run: python3 extract.py
+      run: ./gh_actions/bin/python extract.py
